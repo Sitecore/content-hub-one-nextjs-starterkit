@@ -1,5 +1,5 @@
 import stylesHp from '../../styles/Homepage/Homepage.module.css'
-import Recipe,{RecipeResults} from "../../types/Recipes/recipe-type";
+import Recipe,{RecipeResults} from "../../types/Recipe/recipe-type";
 import Link from 'next/link'
 
 type Props = {

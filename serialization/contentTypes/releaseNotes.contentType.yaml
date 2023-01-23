@@ -1,0 +1,97 @@
+﻿id: releaseNotes
+name:
+  en-US: Release Notes
+description:
+  en-US: Main content type to maintain Release Notes for Componsable Sitecore Products
+fields:
+- id: title
+  name:
+    en-US: Title
+  type: ShortText
+  required: true
+  helpText:
+    en-US: ''
+- id: descriptionrt
+  name:
+    en-US: DescriptionRT
+  type: RichText
+  required: false
+  helpText:
+    en-US: ''
+- id: release
+  name:
+    en-US: Release
+  type: ShortText
+  required: false
+  helpText:
+    en-US: ''
+- id: publishDate
+  name:
+    en-US: Publish Date
+  type: DateTime
+  required: false
+  helpText:
+    en-US: ''
+- id: context
+  name:
+    en-US: Context
+  type: ShortText
+  required: true
+  helpText:
+    en-US: ''
+- id: addno
+  name:
+    en-US: AddNo
+  type: ShortText
+  required: false
+  helpText:
+    en-US: ''
+- id: linktooriginreleasenotes
+  name:
+    en-US: LinkToOriginReleaseNotes
+  type: ShortText
+  required: false
+  helpText:
+    en-US: ''
+- id: highlight
+  name:
+    en-US: Highlight
+  type: Boolean
+  required: false
+  helpText:
+    en-US: ''
+- id: breakingChange
+  name:
+    en-US: Breaking Change
+  type: Boolean
+  required: false
+  helpText:
+    en-US: ''
+- id: notesimage
+  name:
+    en-US: NotesImage
+  type: Media
+  required: false
+  helpText:
+    en-US: ''
+- id: type
+  name:
+    en-US: Type
+  type: Reference
+  required: false
+  helpText:
+    en-US: ''
+- id: sitecoreProduct
+  name:
+    en-US: Sitecore Product (Sellable)
+  type: Reference
+  required: false
+  helpText:
+    en-US: ''
+- id: internalProduct
+  name:
+    en-US: Internal Product
+  type: Reference
+  required: false
+  helpText:
+    en-US: ''

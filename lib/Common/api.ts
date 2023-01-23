@@ -8,13 +8,3 @@ export async function fetchAPI(query: string) {
     body: JSON.stringify({ query }),
   }).then((response) => response.json());
 }
-
-/*export function parseRichText(richtext: any) : RTE {
-  const Renderer = require("prosemirror-to-html").Renderer;
-  const renderer = new Renderer();
-
-  return {
-    type: richtext.type,
-    content: renderer.render({richtext}),
-  }
-}*/

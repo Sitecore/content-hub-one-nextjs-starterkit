@@ -1,0 +1,41 @@
+﻿id: recipe
+name:
+  en-US: Recipe
+description:
+  en-US: Simple Recipe for Cooking instructions
+fields:
+- id: recipeTitle
+  name:
+    en-US: Recipe Title
+  type: ShortText
+  required: true
+  helpText:
+    en-US: ''
+- id: minutesToPrepare
+  name:
+    en-US: Minutes To Prepare
+  type: Integer
+  required: true
+  helpText:
+    en-US: ''
+- id: preparationDescription
+  name:
+    en-US: Preparation Description
+  type: LongText
+  required: true
+  helpText:
+    en-US: ''
+- id: ingredients
+  name:
+    en-US: Ingredients
+  type: LongText
+  required: true
+  helpText:
+    en-US: ''
+- id: image
+  name:
+    en-US: Image
+  type: Media
+  required: false
+  helpText:
+    en-US: ''

@@ -20,7 +20,6 @@ export async function getRecipeById(id: string): Promise<Recipe> {
   
   const data = await fetchAPI(queryRecipe);
   return data.data.data;
-  //return extractPosts(data);
 }
 
 export async function getAllRecipeWithIds(): Promise<Recipe[]> {

@@ -1,88 +1,69 @@
 import MEDIA_QUERY from "../Common/media-query";
+import HEADER_QUERY from "../Homepage/header-query";
+import { RECIPE_QUERY } from "../Recipe/recipe-query";
+import { FOOTER_QUERY } from "./footer-query";
+import MENU_QUERY from "./menu-query";
+
+export const HOMEPAGE_QUERY = ` 
+  id
+  name
+  heroBanner {
+    results{
+      ${MEDIA_QUERY}
+    }
+  }
+  header {
+    total
+    results {
+      __typename
+      ... on Header {
+        id
+        name
+        logo {
+          total
+          results {
+            ${MEDIA_QUERY}
+          }
+        }
+        menuItems {
+          total
+          results {
+            __typename
+            ... on Menu {
+             ${MENU_QUERY}
+            }
+          }
+        }
+      }
+    }
+  }
+  recipeTitle
+  recipeSectionText
+  recipes {
+    total
+    results {
+      __typename
+      ... on Recipe {
+        ${RECIPE_QUERY}
+      }
+    }
+    
+  }
+  footer {
+    total
+    results {
+      __typename
+      ... on Footer {
+        ${FOOTER_QUERY}
+      } 
+    }
+  }
+`;
 
 export const ALL_HOMEPAGE_QUERY = `{ 
   data: allHomepage {
     results{
-      id
-      name
-      heroBanner {
-        results{
-          ${MEDIA_QUERY}
-        }
-      }
-      header {
-        total
-        results {
-          __typename
-        	... on Header {
-						id
-            name
-            logo {
-              total
-            	results {
-                ${MEDIA_QUERY}
-              }
-          	}
-          	menuItems {
-            	total
-            	results {
-              	__typename
-              	... on Menu {
-                  id
-                  name
-                  label
-                  link
-                }
-            	}
-            }
-          }
-        }
-      }
-      recipeTitle
-      recipeSectionText
-      recipes {
-        total
-        results {
-          __typename
-          ... on Recipe {
-            id
-            name
-            Title: recipeTitle
-            Ingredients: ingredients
-            Duration: minutesToPrepare
-            Description: preparationDescription
-            ImageList: image{
-              total
-              results{
-                ${MEDIA_QUERY}
-              }
-            }
-          }
-        }
-        
-      }
-      footer {
-        total
-        results {
-          __typename
-          ... on Footer {
-            id
-            name
-            menuItems {
-            	total
-            	results {
-              	__typename
-              	... on Menu {
-                  id
-                  name
-                  label
-                  link
-                }
-              }
-            }
-          } 
-        }
-      }
+      ${HOMEPAGE_QUERY}
     }
   }
 }

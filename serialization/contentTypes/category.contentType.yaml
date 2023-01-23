@@ -1,0 +1,13 @@
+﻿id: category
+name:
+  en-US: Category
+description:
+  en-US: ''
+fields:
+- id: categoryName
+  name:
+    en-US: Category Name
+  type: ShortText
+  required: false
+  helpText:
+    en-US: ''

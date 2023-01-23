@@ -7,6 +7,7 @@ export const RECIPE_QUERY = `
   Ingredients: ingredients
   Duration: minutesToPrepare
   Description: preparationDescription
+  preparationDescriptionRt
   ImageList: image{
     total
     results{

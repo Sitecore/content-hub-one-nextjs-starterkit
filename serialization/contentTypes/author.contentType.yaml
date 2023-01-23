@@ -1,0 +1,20 @@
+﻿id: author
+name:
+  en-US: Author
+description:
+  en-US: Author content type to be used with blogposts
+fields:
+- id: fullname
+  name:
+    en-US: fullName
+  type: ShortText
+  required: true
+  helpText:
+    en-US: ''
+- id: profilepicture
+  name:
+    en-US: ProfilePicture
+  type: Media
+  required: false
+  helpText:
+    en-US: ''

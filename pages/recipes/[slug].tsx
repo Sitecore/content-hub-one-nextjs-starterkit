@@ -4,6 +4,15 @@ import ErrorPage from "next/error";
 import {getRecipeById,getAllRecipeWithIds} from "../../lib/Recipe/recipe-lib";
 import stylesHp from '../../styles/Homepage/Homepage.module.css';
 import Head from 'next/head'
+import {getHomepageById} from "../../lib/Homepage/homepage-lib";
+import { HOMEPAGE_ID } from "../../lib/Common/constants";
+import Homepage from "../../types/Homepage/homepage-type";
+import HeaderComponent from "../../components/Homepage/header-component";
+import FooterComponent from "../../components/Homepage/footer-component";
+import { richTextProfile } from "../../lib/Common/richTextConfiguration";
+import { JSONContent } from "@tiptap/core";
+import { generateHTML } from "@tiptap/html";
+const Renderer = require("prosemirror-to-html-js").Renderer;
 
 
 type Params = {
@@ -13,10 +22,11 @@ type Params = {
   };
 
   export async function getStaticProps({ params }: Params) {
-    const recipe = await getRecipeById(params.slug);    
+    const recipe = await getRecipeById(params.slug); 
+    const homepage = await getHomepageById(HOMEPAGE_ID);   
   
     return {
-        props: {recipe},
+        props: {recipe,homepage},
       // Next.js will attempt to re-generate the page:
       // - When a request comes in
       // - At most once every 10 seconds
@@ -33,10 +43,14 @@ type Params = {
   }
   type Props = {
     recipe: Recipe;
+    homepage: Homepage;
   };
 
-const Post = ({recipe}: Props) => {
+const Post = ({recipe,homepage}: Props) => {
     const router = useRouter();
+    const renderer = new Renderer();
+    
+    const output = generateHTML(recipe?.preparationDescriptionRt,[richTextProfile]);
     /*if (!router.isFallback && !recipe?.id) { //&& !recipe?.slug
         return <ErrorPage statusCode={404} />;
     }*/
@@ -48,64 +62,30 @@ const Post = ({recipe}: Props) => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main className={stylesHp.main}>
-                <div>
-                    <div className={stylesHp.header}>
-                        <div className={stylesHp.boxedContainer} >
-                            <img className={stylesHp.Logo} src="https://mms-delivery.sitecorecloud.io/api/media/v2/delivery/df4c80ea-db67-49f8-bcd3-08daadeee4f5/a7fd7eeb17b5478db61981633be25b81"/>
-                            <div className={stylesHp.Navigation}>
-                                <a href="homepage">
-                                    <span className="NavigationItem">
-                                        Home
-                                    </span>
-                                </a>
-                                <a href="recipes">
-                                    <span className="NavigationItem">
-                                        Recipes
-                                    </span>
-                                </a>
-                                <a href="releasenotes">
-                                    <span className="NavigationItem">
-                                        Release Notes
-                                    </span>
-                                </a>
-
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div className={stylesHp.HeroImage}>
-                        <img  src={recipe?.ImageList?.results[0].fileUrl}/>
-                    </div>
+                <HeaderComponent 
+                    allHeaders={homepage.header}
+                />
+                <div className={stylesHp.HeroImage}>
+                    <img  src={recipe?.ImageList?.results[0].fileUrl}/>
                 </div>
+
                 <div className={stylesHp.boxedContainer} >
                     <h1>{recipe?.Title}</h1>
                     <p>
-                        <strong>Duration:</strong> {recipe?.Duration} min.<br/>
-                        <strong>Ingredients:</strong> {recipe?.Ingredients}
+                      <strong>Duration:</strong> {recipe?.Duration} min.<br/>
                     </p>
                     <p>
-                    {recipe?.Description}
+                      <strong>Ingredients:</strong> {recipe?.Ingredients}
                     </p>
-               
+
+                    <p dangerouslySetInnerHTML={{ __html: output }} />
                 </div>
-                <footer className={stylesHp.footer}>
-                    <div className={stylesHp.footerBox}>
-                        <p>
-                            Further Information: {' '}
-                        </p> 
-                        <a className='FooterLinksItem' href="https://www.sitecore.com">
-                            <img className={stylesHp.Logo} src="https://mms-delivery.sitecorecloud.io/api/media/v2/delivery/df4c80ea-db67-49f8-bcd3-08daadeee4f5/bb948e6968364176a605cfb1cba17a4d?width=300&fit=scale-down&transform=true"/>
-                           
-                        </a>
-                        
-                    </div>
-                </footer>
-
+                <FooterComponent
+                    allFooters={homepage.footer}
+                />
+                
             </main>
-
-      
         </div>
-       
     )
 };
 export default Post;

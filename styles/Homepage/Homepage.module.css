@@ -1,7 +1,7 @@
 .container {
     padding: 0 0rem;
   }
-  
+
   .main {
     min-height: 100vh;
     justify-content: center;
@@ -44,6 +44,7 @@
     line-height: 1.15;
     font-size: 4rem;
     margin-top: 30px;
+    margin-bottom: 30px;
   }
   
   .title,
@@ -189,10 +190,17 @@
     max-width: 900px;
     margin: auto;
 }
+.boxedContainer p{
+  margin-bottom: 20px;
+}
+.boxedContainer h1 {
+  margin-bottom: 20px;
+}
 .header {
     min-height: 23px;
     padding-top: 30px;
     padding-bottom: 40px;
+    background-color: white;
 }
 .header .boxedContainer {
     
@@ -221,6 +229,7 @@
   padding: 10px;
   border-radius: 15px;
   border-color: #eaeaea;
+  margin-top: 10px;
   
 }
 .buttonExtra{

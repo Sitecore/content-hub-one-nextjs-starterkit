@@ -1,38 +1,39 @@
-import styles from '../../styles/Homepage/Home.module.css'
+import styles from '../../styles/Homepage/Homepage.module.css'
+import Recipe,{RecipeResults} from "../../types/Recipe/recipe-type";
 type Props = {
-    recipeTitle: string
-    id: string
-    name: string
-    ingredients: string
-    minutesToPrepare: string
-    preparationDescription: string
-    image: string
+    allRecipes: RecipeResults;
 }
 
-const RecipeComponent = ({
-    recipeTitle,
-    id,
-    name,
-    ingredients,
-    minutesToPrepare,
-    preparationDescription,
-    image,
-}: Props) => {
+const RecipeComponent = ({allRecipes}:Props) => {
+    const recipes = allRecipes;
     return(
-        
-        <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>{recipeTitle} &rarr;</h2>
-            <p>
-                ({id})
-                <img width="100%" src={image}/> <br/>
-                Name: {name}<br/>
-                Ingredients: {ingredients}<br/>
-                Duration: {minutesToPrepare} min.<br/>
-                Description: {preparationDescription}<br/>
-                
-            </p>
-          </a>
-        
+        <div>
+            <style jsx>{`
+                    .button{
+                        padding: 10px;
+                        border-radius: 15px;
+                        border-color: #eaeaea;
+                        background-color: blueviolet;
+                        color: white;
+                      }
+
+                `} 
+            </style>   
+            {recipes.results.map((recipe: any) => (
+            <a href="https://nextjs.org/docs" className={styles.card}>
+                <h2>{recipe.recipeTitle} &rarr;</h2>
+                <p>
+                    ({recipe.id})
+                    <img width="100%" src={recipe.ImageList.results[0].fileUrl}/> <br/>
+                    Name: {name}<br/>
+                    Ingredients: {recipe.ingredients}<br/>
+                    Duration: {recipe.minutesToPrepare} min.<br/>
+                    Description: {recipe.preparationDescription}<br/>
+                    
+                </p>
+            </a>
+            ))}
+        </div>
     )
 }
 

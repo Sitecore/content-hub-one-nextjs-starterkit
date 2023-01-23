@@ -1,4 +1,5 @@
-import {MediaResults} from "../Basics/media-type" 
+import {MediaResults} from "../Common/media-type" 
+import { JSONContent } from "@tiptap/core";
 
 type Recipe = {
     Title: string
@@ -7,6 +8,7 @@ type Recipe = {
     Ingredients: string
     Duration: string
     Description: string
+    preparationDescriptionRt: JSONContent
     ImageList: MediaResults
   }
 export default Recipe

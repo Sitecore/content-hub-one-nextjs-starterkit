@@ -1,0 +1,41 @@
+﻿id: recipes
+name:
+  en-US: Recipes
+description:
+  en-US: ''
+fields:
+- id: recipename
+  name:
+    en-US: RecipeName
+  type: ShortText
+  required: true
+  helpText:
+    en-US: ''
+- id: ingredients
+  name:
+    en-US: Ingredients
+  type: ShortText
+  required: false
+  helpText:
+    en-US: ''
+- id: recipeDescription
+  name:
+    en-US: Recipe Description
+  type: LongText
+  required: false
+  helpText:
+    en-US: ''
+- id: minutesToPrepapare
+  name:
+    en-US: Minutes to prepapare
+  type: Integer
+  required: false
+  helpText:
+    en-US: ''
+- id: image
+  name:
+    en-US: Image
+  type: Media
+  required: false
+  helpText:
+    en-US: ''

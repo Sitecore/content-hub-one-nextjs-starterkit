@@ -1,5 +1,5 @@
 import { MediaResults } from "../Common/media-type"
-import { RecipeResults } from "../Recipes/recipe-type"
+import { RecipeResults } from "../Recipe/recipe-type"
 import { FooterResults } from "./footer-type"
 import { HeaderResults } from "./header-type"
 

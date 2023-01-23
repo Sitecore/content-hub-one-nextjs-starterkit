@@ -1,0 +1,41 @@
+﻿id: sitecoreProductsInternal
+name:
+  en-US: Sitecore Products Internal
+description:
+  en-US: Sitecore Product Names that we use internally. Mostly subproducts Such as Pages is to XM Cloud
+fields:
+- id: productNameInternal
+  name:
+    en-US: Product Name Internal
+  type: ShortText
+  required: false
+  helpText:
+    en-US: ''
+- id: productDescriptionInternal
+  name:
+    en-US: Product Description Internal
+  type: LongText
+  required: false
+  helpText:
+    en-US: ''
+- id: productAbbreviationInternal
+  name:
+    en-US: Product Abbreviation Internal
+  type: ShortText
+  required: false
+  helpText:
+    en-US: ''
+- id: productOwnerInteral
+  name:
+    en-US: Product Owner Interal
+  type: ShortText
+  required: false
+  helpText:
+    en-US: ''
+- id: sitecoreProducts
+  name:
+    en-US: Sitecore Products
+  type: Reference
+  required: false
+  helpText:
+    en-US: ''

@@ -14,8 +14,9 @@ const HeaderComponent = ({allHeaders}: Props) => {
         <div>
             <div className={stylesHp.header}>
                 <div className={stylesHp.boxedContainer} >
-                    <img className={stylesHp.Logo} src={header.logo.results[0].fileUrl}/>
-                    
+                    <a href="https://doc.sitecore.com/ch-one/" target="_blank">
+                        <img className={stylesHp.Logo} src={header.logo.results[0].fileUrl}/>
+                    </a>
                     <NavigationComponent 
                         menuResults  = {header.menuItems}
                     />

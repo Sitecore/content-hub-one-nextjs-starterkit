@@ -1,0 +1,13 @@
+﻿id: footer
+name:
+  en-US: Footer
+description:
+  en-US: Footer of Website
+fields:
+- id: menuItems
+  name:
+    en-US: Menu items
+  type: Reference
+  required: false
+  helpText:
+    en-US: ''

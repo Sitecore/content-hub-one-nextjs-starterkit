@@ -1,0 +1,43 @@
+﻿id: products
+name:
+  en-US: Products
+description:
+  en-US: collection of products
+fields:
+- id: productName
+  name:
+    en-US: Product Name
+  type: ShortText
+  required: false
+  helpText: {}
+- id: productDescription
+  name:
+    en-US: Product Description
+  type: LongText
+  required: false
+  helpText: {}
+- id: productQuantity
+  name:
+    en-US: Quantity
+  type: Integer
+  required: false
+  helpText: {}
+- id: productImage
+  name:
+    en-US: Image
+  type: Media
+  required: false
+  helpText: {}
+- id: productPrice
+  name:
+    en-US: Price
+  type: ShortText
+  required: false
+  helpText: {}
+- id: releatedProducts
+  name:
+    en-US: Related Products
+  type: Reference
+  required: false
+  helpText:
+    en-US: ''

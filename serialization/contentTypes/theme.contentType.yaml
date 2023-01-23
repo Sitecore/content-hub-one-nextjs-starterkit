@@ -1,0 +1,20 @@
+﻿id: theme
+name:
+  en-US: Theme
+description:
+  en-US: ''
+fields:
+- id: buttonColor
+  name:
+    en-US: Button Color
+  type: ShortText
+  required: false
+  helpText:
+    en-US: ''
+- id: buttonpadding
+  name:
+    en-US: ButtonPadding
+  type: ShortText
+  required: false
+  helpText:
+    en-US: ''
