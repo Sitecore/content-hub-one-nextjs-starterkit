@@ -1,11 +1,36 @@
 # content-hub-one-nextjs-starterkit
-The Content Hub ONE NextJS starterkit will contain helping functionalities such as handling GraphQL JSON output conversion to HTML for Rich Text, Media Fields and References. Also it will contain a small example implementation that Developers can use to start their customer projects on.
+The Content Hub ONE NextJS starterkit contains helping functionalities such as handling GraphQL JSON output conversion to HTML for Rich Text, Media Fields and References. It also contains a small example implementation that Developers can use to start their customer projects on.
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+## Prerequisites
+For this starterkit you require a Content Hub ONE tenant. Find more information here: [https://www.sitecore.com/products/content-hub-one](https://www.sitecore.com/products/content-hub-one)
 
-First, run the development server:
+### Install the Content Hub ONE CLI. 
+Therefore, check the [documentation](https://doc.sitecore.com/ch-one/en/developers/content-hub-one/content-hub-one-cli--install-and-run-the-cli.html).
+
+### Install required npm packages
+In the root of your repository folder run: 
+
+npm install
+
+### Serialization
+#### Push the serialized content types into your Contnet Hub ONE tenant. 
+
+Run: ch-one-cli ser push content-type
+
+#### Push the serialized content items into your Content Hub ONE tenant. 
+
+Run: 
+ch-one-cli ser push content-item -c "menu"
+ch-one-cli ser push content-item -c "header"
+ch-one-cli ser push content-item -c "footer"
+ch-one-cli ser push content-item -c "recipe"
+ch-one-cli ser push content-item -c "homepage"
+
+## Start the application
+
+run the development server:
 
 ```bash
 npm run dev
@@ -14,21 +39,6 @@ yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
 ## Deploy on Vercel
 
