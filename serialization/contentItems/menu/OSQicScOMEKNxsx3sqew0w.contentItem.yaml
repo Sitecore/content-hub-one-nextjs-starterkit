@@ -1,0 +1,9 @@
+﻿id: OSQicScOMEKNxsx3sqew0w
+name: Homepage
+fields:
+  label:
+    value: Home
+    type: ShortText
+  link:
+    value: ''
+    type: ShortText

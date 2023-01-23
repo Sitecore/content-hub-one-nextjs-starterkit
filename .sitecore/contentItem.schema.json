@@ -1,0 +1,103 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://content.sitecorecloud.io/contentItem.schema.json",
+  "title": "Content Item",
+  "description": "The content item schema",
+  "type": "object",
+  "definitions": {
+    "stringField": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "string"
+        },
+        "type": {
+          "enum": ["LongText", "RichText", "ShortText", "DateTime"]
+        }
+      }
+    },
+    "richTextObjectField": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "object"
+        },
+        "type": {
+          "enum": ["RichText"]
+        }
+      }
+    },
+    "booleanField": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "boolean"
+        },
+        "type": {
+          "enum": ["Boolean"]
+        }
+      }
+    },
+    "integerField": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "integer"
+        },
+        "type": {
+          "enum": ["Integer"]
+        }
+      }
+    },
+    "mediaField": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "string"
+        },
+        "type": {
+          "enum": ["Media"]
+        }
+      }
+    },
+    "referenceField": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "array"
+        },
+        "type": {
+          "enum": ["Reference"]
+        }
+      }
+    }
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "title": "The unique identifier of the content item."
+    },
+    "name": {
+      "type": "string",
+      "title": "The name of the content item."
+    },
+    "fields": {
+      "type": "object",
+      "title": "The name of the content type.",
+      "patternProperties": {
+        "^\\w{1,}$": {
+          "anyOf": [
+            { "$ref": "#/definitions/stringField" },
+            { "$ref": "#/definitions/richTextObjectField" },
+            { "$ref": "#/definitions/booleanField" },
+            { "$ref": "#/definitions/integerField" },
+            { "$ref": "#/definitions/mediaField" },
+            { "$ref": "#/definitions/referenceField" }
+          ],
+          "title": "The field name."
+        }
+      }
+    }
+  },
+  "required": ["id", "name"]
+}

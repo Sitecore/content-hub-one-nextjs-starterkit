@@ -1,0 +1,13 @@
+﻿id: ERTQNM3AxUWpbhIBhcBe8g
+name: Homepage Footer
+fields:
+  menuItems:
+    value:
+    - >-
+      {
+        "type": "Link",
+        "relatedType": "Content",
+        "id": "G7Jr0W6Z0UiB7MnXv-r9bg",
+        "uri": "http://content-api-weu.sitecorecloud.io/api/content/v1/items/G7Jr0W6Z0UiB7MnXv-r9bg"
+      }
+    type: Reference
