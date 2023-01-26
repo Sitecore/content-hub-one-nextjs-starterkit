@@ -34,19 +34,21 @@ This is required to connect your App with the Content Hub ONE tenant.
 
 ## Serialization
 ### Push the serialized content types into your Contnet Hub ONE tenant. 
-Navigate with your console to the serialization folder within your solution.
+Navigate with your console to the serialization folder within your solution. Run:
 
-Run: 
     ch-one-cli ser push content-type
 
 ### Push the serialized content items into your Content Hub ONE tenant. 
-Navigate with your console to the serialization folder within your solution.
+Navigate with your console to the serialization folder within your solution. Run: 
 
-Run: 
     ch-one-cli ser push content-item -c "menu"
+
     ch-one-cli ser push content-item -c "header"
+
     ch-one-cli ser push content-item -c "footer"
+
     ch-one-cli ser push content-item -c "recipe"
+
     ch-one-cli ser push content-item -c "homepage"
 
 ### Media items and Files
@@ -59,6 +61,13 @@ In the root of your repository you find the setup.js file.
 In your console window, navigate to the root of the solution and run:
     node setup.js
 
+### Publish Content Types, Media Items And Content Items
+Go to the Content Hub ONE app and publish in the following order:
+1. Content Types
+2. Media Items
+3. Content Items
+
+If you are approaching the Delivery API items need to be published to be available. Using the preview API, publishing is not required.
 
 ## Start the application
 
