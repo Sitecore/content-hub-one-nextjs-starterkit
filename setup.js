@@ -5,14 +5,18 @@ const axios = require('axios');
 const fs = require('fs');
 const green = '\x1b[32m';
 const red = '\x1b[31m';
-const grey = '\x1b[90m';
 const white = '\x1b[37m';
 
 
 const client_secret = process.env.SITECORE_CLIENT_SECRET; 
 const client_id = process.env.SITECORE_CLIENT_ID;
 
-start();
+if (client_secret != '' && client_id != '') {
+    start();
+}
+else {
+    console.log(red,'Client ID or Client Secret not set. check your .env file. For more information check the readme.md file.');
+}
 
 async function start () {
     await mediaUploadFunction('ch-one-logo.png', //fileName
@@ -64,8 +68,6 @@ async function start () {
                         'Soft Ice',//Media Item Name.
                         'Soft Ice Cream'); //Media Item Description
 }
-
-
 
 async function mediaUploadFunction(fileName, fileType, fileSize,itemId,itemName,itemDescripton) {
     console.log('');
