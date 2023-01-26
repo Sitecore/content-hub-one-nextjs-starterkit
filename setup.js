@@ -100,14 +100,12 @@ async function mediaUploadFunction(fileName, fileType, fileSize,itemId,itemName,
 
                 //Step 5: Create Media Item connected to File
                 var mediaItemStatus = await createMediaItem(token,itemId, itemName,itemDescripton, fileId,fileName);
-
             }
         }
         else 
         {
             console.log(red,'ERROR - fileId or uploadUrl not set! fileId: ' + fileId + ' uploadUrl: ' + uploadUrl)
         }
-
     }   
     else 
     {
@@ -148,13 +146,11 @@ async function authenticate ()
     .catch(function (error) {
         console.log(red,'ERROR: ' + error);
     });
-    
 
     token = token.replaceAll('"','');
     console.log(green,'Token Generated: ' + token.substring(0,10) + '...');
 
     return token;
-
 }
 async function createUploadLink (authToken,contentType,contentLength,fileName) 
 {
@@ -187,13 +183,11 @@ async function createUploadLink (authToken,contentType,contentLength,fileName)
 
     fileId = fileId.replaceAll('"','');
     uploadUrl = uploadUrl.replaceAll('"','');
-
     
     console.log(white,'UploadUrl: ' + uploadUrl);
     console.log(white,'FileId: ' + fileId);
     console.log(green,'UploadUrl and FileId generated!');
     return [fileId,uploadUrl];
-
 }
 async function uploadAsset (url, fileName) {
     console.log('');
@@ -204,7 +198,6 @@ async function uploadAsset (url, fileName) {
     
     console.log(white,'File: ');
     console.log(white, file);
-
 
     var config = {
         method: 'put',
@@ -218,20 +211,17 @@ async function uploadAsset (url, fileName) {
 
     await axios(config)
     .then(function (response) {
-
         status = JSON.stringify(response.status);
         console.log(white,'Upload Status: ' + status);
-        
     })
     .catch(function (error) {
         console.log(red, 'ERROR - Upload Status: ' + JSON.stringify(error.response.status));
         status = error.response.status;
         console.log(white, error);
-
     });
+
     console.log(green,'Asset Upload done!');
     return status;
-
 }
 async function completeUpload (authToken, fileId,fileLength,fileType) {
     console.log('');
@@ -240,16 +230,15 @@ async function completeUpload (authToken, fileId,fileLength,fileType) {
     var data = JSON.stringify({"fileId":fileId});
 
     var config = {
-    method: 'post',
-    url: 'https://mms-upload.sitecorecloud.io/api/media/v1/upload/link/complete',
-    headers: { 
-        'x-mms-content-length': fileLength, 
-        'x-mms-content-type': fileType, 
-        'Content-Type': 'application/json', 
-        'Authorization': 'Bearer ' + authToken
-    },
-    data : data
-
+        method: 'post',
+        url: 'https://mms-upload.sitecorecloud.io/api/media/v1/upload/link/complete',
+        headers: { 
+            'x-mms-content-length': fileLength, 
+            'x-mms-content-type': fileType, 
+            'Content-Type': 'application/json', 
+            'Authorization': 'Bearer ' + authToken
+        },
+        data : data
     };
 
     await axios(config)
@@ -272,7 +261,6 @@ async function createMediaItem (authToken,itemId, itemName,itemDescripton, fileI
 
     if (itemId === '') {itemId = fileId;}
     if (itemName === '') {itemName = fileName;}
-
 
     var data = JSON.stringify({"id": itemId,"name": itemName,"description": itemDescripton,"fileId": fileId});
     let status;
@@ -301,6 +289,5 @@ async function createMediaItem (authToken,itemId, itemName,itemDescripton, fileI
 
     console.log(green,'Media Item created');
     return status;
-
 }
 
