@@ -52,7 +52,7 @@ Run:
 ### Media items and Files
 The Starterkit uses Images. Currently the CLI cannot handle Media Assets and Media Items. These need to be created manually.
 
-This solution contains a node script to support you uploading the images and creating the required media items.
+This solution contains a node script to support you uploading the images from the /setup folder and creating the required media items.
 
 In the root of your repository you find the setup.js file. 
 
