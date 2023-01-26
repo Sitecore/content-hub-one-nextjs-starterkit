@@ -1,9 +1,0 @@
-﻿id: W_mYnykO3UyQitqrnEYCQQ
-name: Recipes
-fields:
-  label:
-    value: Recipe
-    type: ShortText
-  link:
-    value: recipes
-    type: ShortText

@@ -5,5 +5,5 @@ fields:
     value: Home
     type: ShortText
   link:
-    value: ''
+    value: /
     type: ShortText
