@@ -24,7 +24,7 @@ async function start () {
                         '13213', //fileSize
                         'WdokfNA8xkeL6SV8sTfv8A', //Media Item Id: leave empty when not needed, e.g. ''
                         'Content Hub ONE Logo',//Media Item Name.
-                        'Contnet Hub ONE, a great choice for Omnichannel Marketing'); //Media Item Description
+                        'Content Hub ONE, a great choice for Omnichannel Marketing'); //Media Item Description
 
     await mediaUploadFunction('hero-image-homepage.jpg', //fileName
                         'image/jpeg', //fileType

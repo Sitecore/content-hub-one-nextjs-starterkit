@@ -23,23 +23,23 @@ export async function getRecipeById(id: string): Promise<Recipe> {
 }
 
 export async function getAllRecipeWithIds(): Promise<Recipe[]> {
-
-  const data = await fetchAPI(
-    `{ 
-      data: allRecipe(where: { id_neq : null } )
-      {
-        __typename
-        total
-        results {
-          ${RECIPE_QUERY}
-        }
+  const  query = `{ 
+    data: allRecipe
+    {
+      __typename
+      total
+      results {
+        ${RECIPE_QUERY}
       }
-    }`
-  );
-  return extractPosts(data.data);
+    }
+  }`;
+
+  const data = await fetchAPI(query);
+   return extractPosts(data.data);
 }
 
 function extractPosts({ data }: { data: RecipeResults }) {
+
     return data.results.map((post: Recipe) => {
       return post;
     });

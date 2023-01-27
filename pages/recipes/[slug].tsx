@@ -36,6 +36,7 @@ type Params = {
   
   export async function getStaticPaths() {
     const allRecipePosts = await getAllRecipeWithIds();
+
     return {
       paths: allRecipePosts.map(({ id }) => `/recipes/${id}`) ?? [],
       fallback: true,

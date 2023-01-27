@@ -5,7 +5,6 @@ import {ALL_HOMEPAGE_QUERY,HOMEPAGE_QUERY} from "../../graphQl/Homepage/homepage
 
 export async function getAllHomepage(preview: boolean): Promise<Homepage[]> {
     const data = await fetchAPI(`${ALL_HOMEPAGE_QUERY}`);
-    
     return extractPosts(data.data);
 }
 
