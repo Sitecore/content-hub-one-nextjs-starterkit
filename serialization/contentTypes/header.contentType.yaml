@@ -19,10 +19,3 @@ fields:
   required: false
   helpText:
     en-US: ''
-- id: heroImage
-  name:
-    en-US: Hero Image
-  type: Media
-  required: false
-  helpText:
-    en-US: ''
