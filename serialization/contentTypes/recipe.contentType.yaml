@@ -20,9 +20,16 @@ fields:
     en-US: ''
 - id: preparationDescription
   name:
-    en-US: Preparation Description
+    en-US: Teaser Text
   type: LongText
   required: true
+  helpText:
+    en-US: ''
+- id: preparationDescriptionRt
+  name:
+    en-US: 'Preparation Description '
+  type: RichText
+  required: false
   helpText:
     en-US: ''
 - id: ingredients
