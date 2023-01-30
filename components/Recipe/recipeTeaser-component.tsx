@@ -1,6 +1,7 @@
 import stylesHp from '../../styles/Homepage/Homepage.module.css'
-import Recipe,{RecipeResults} from "../../types/Recipe/recipe-type";
+import {RecipeResults} from "../../types/Recipe/recipe-type";
 import Link from 'next/link'
+import Image from 'next/image'
 
 type Props = {
     allRecipes: RecipeResults;
@@ -10,21 +11,16 @@ const RecipeTeaserComponent = ({allRecipes}:Props) => {
     
     return(
         <div>
-            <style jsx>{`
-                    .button{
-                        padding: 10px;
-                        border-radius: 15px;
-                        border-color: #eaeaea;
-                        background-color: blueviolet;
-                        color: white;
-                      }
-
-                `}    
-            </style>
             {recipes.map((recipe: any) => (
                 <div className={stylesHp.boxOuter}>
                     <div className={stylesHp.box}>
-                        <img src={recipe.ImageList.results[0].fileUrl}/>
+                        <Image 
+                            alt=''
+                            src={recipe.ImageList.results[0].fileUrl}
+                            width='500'
+                            height= '500'
+                            className={stylesHp.boxImage}
+                        />
                         <h2>{recipe.Title}</h2>
                         <p className={stylesHp.boxText}>
                             {recipe.Description}

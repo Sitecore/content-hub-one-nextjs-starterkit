@@ -1,6 +1,5 @@
-import styles from '../../styles/Homepage/Homepage.module.css'
-import { getAllFooter } from '../../lib/Homepage/footer-lib';
-import Footer, {FooterResults} from '../../types/Homepage/footer-type'
+import styles from '../../styles/Homepage/Footer.module.css'
+import {FooterResults} from '../../types/Homepage/footer-type'
 import FooterLinksComponent from './footerLinks-component';
 
 

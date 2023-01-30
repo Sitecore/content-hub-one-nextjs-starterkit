@@ -1,7 +1,6 @@
-import styles from '../styles/Home.module.css'
-import Header, {HeaderResults} from '../../types/Homepage/header-type'
 import Menu, { MenuResults } from '../../types/Homepage/menu-type';
-import stylesHp from '../../styles/Homepage/Homepage.module.css';
+import stylesHp from '../../styles/Homepage/Navigation.module.css';
+import Link from 'next/link';
 
 
 type Props = {
@@ -12,11 +11,11 @@ const NavigationComponent = ({menuResults}: Props) => {
     return(
         <div className={stylesHp.Navigation}>
           {menuResults.results.map((menu: Menu) => (
-            <a href={menu.link}>
+            <Link href={menu.link}>
               <span className='NavigationItem'>
                 {menu.label}
               </span>
-            </a>
+            </Link>
           ))}
         </div>
         

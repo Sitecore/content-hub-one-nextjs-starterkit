@@ -1,7 +1,8 @@
-import { getAllHeader } from '../../lib/Homepage/header-lib';
-import Header, {HeaderResults} from '../../types/Homepage/header-type'
+import {HeaderResults} from '../../types/Homepage/header-type'
 import stylesHp from '../../styles/Homepage/Homepage.module.css';
 import NavigationComponent from './navigation-component';
+import Image from 'next/image';
+import Link from 'next/link';
 
 
 type Props = {
@@ -14,9 +15,15 @@ const HeaderComponent = ({allHeaders}: Props) => {
         <div>
             <div className={stylesHp.header}>
                 <div className={stylesHp.boxedContainer} >
-                    <a href="https://doc.sitecore.com/ch-one/" target="_blank">
-                        <img className={stylesHp.Logo} src={header.logo.results[0].fileUrl}/>
-                    </a>
+                    <Link href="https://doc.sitecore.com/ch-one/" target="_blank">
+                        <Image 
+                            alt=''
+                            src={header.logo.results[0].fileUrl}
+                            width={24}
+                            height={24}
+                            className={stylesHp.Logo}
+                        />
+                    </Link>
                     <NavigationComponent 
                         menuResults  = {header.menuItems}
                     />

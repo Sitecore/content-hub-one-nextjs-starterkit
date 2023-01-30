@@ -1,5 +1,4 @@
 import MEDIA_QUERY from "../Common/media-query";
-import HEADER_QUERY from "../Homepage/header-query";
 import { RECIPE_QUERY } from "../Recipe/recipe-query";
 import { FOOTER_QUERY } from "./footer-query";
 import MENU_QUERY from "./menu-query";

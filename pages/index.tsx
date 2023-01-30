@@ -1,12 +1,12 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import HeaderComponent from '../components/Homepage/header-component'
 import stylesHp from '../styles/Homepage/Homepage.module.css';
 import {getAllHomepage} from "../lib/Homepage/homepage-lib";
 import Homepage from "../types/Homepage/homepage-type";
 import FooterComponent from '../components/Homepage/footer-component';
-import RecipeComponent from '../components/Recipe/recipe-component';
 import RecipeTeaserComponent from '../components/Recipe/recipeTeaser-component';
+import Image from 'next/image'
+import HeroBanner from '../components/Homepage/hero-banner';
 
 export async function getStaticProps({ preview = false}){
   const allHomepage = await getAllHomepage(preview);
@@ -24,11 +24,8 @@ type Props = {
   allHomepage: Homepage[];
 }
 
-
 const Homepage = ({allHomepage}: Props) => {
   const homepage = allHomepage[0];
-  const recipes = allHomepage[0].recipes.results;
-
 
   return (
     <div className={stylesHp.container}>
@@ -42,10 +39,11 @@ const Homepage = ({allHomepage}: Props) => {
         <HeaderComponent 
           allHeaders={homepage.header}
         />
-        
-        <div className={stylesHp.HeroImage}>
-            <img src={homepage.heroBanner?.results[0].fileUrl} />
-        </div>
+        <HeroBanner 
+          heroImageUrl={homepage.heroBanner?.results[0].fileUrl}
+          altText=''
+        />
+       
 
         <div className={stylesHp.boxedContainer}>
           <h1 className={stylesHp.title}>

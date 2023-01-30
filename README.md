@@ -19,6 +19,10 @@ In the root of your repository folder run:
 
     npm install
 
+As you might see 1 high severity vulnerability you might want to run following command to fix it.
+
+    npm audit fix
+
 ## setup .env 
 Copy .env.example file in your repository root and rename it to ".env".
 In there fill the following values:
@@ -46,6 +50,7 @@ This solution contains a node script to support you uploading the images from th
 In the root of your repository you find the setup.js file. 
 
 In your console window, navigate to the root of the solution and run:
+
     node setup.js
 
 ### Push the serialized content types into your Contnet Hub ONE tenant. 

@@ -8,25 +8,7 @@
     align-items: center;
   }
   
-  .footer {
-    display: flex;
-    flex: 1;
-    padding: 2rem 0;
-    border-top: 1px solid #eaeaea;
-    justify-content: center;
-    align-items: center;
-    background-color: #212621;
-    width: 100%;
-    margin-top: 30px;
-    color: lightgray;
-  }
   
-  .footer a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-grow: 1;
-  }
   
   .title a {
     color: #0070f3;
@@ -132,27 +114,11 @@
   
 
 
-.HeroImage {
-    margin-top: 0px;
-}
 
-.HeroImage img {
-    width: 100%;
-    height: 520px;
-    object-fit: cover;
-}
 .Logo {
     float: left;
 }
-.Navigation {
-    margin-bottom: 12px;
-    margin: auto;
-    float: left;
-}
-.Navigation a {
-    padding: 12px;
 
-}
 
 .box {
     border: 1px solid #eaeaea;
@@ -166,7 +132,12 @@
 
 .box img {
     width: 100%;
+    height: auto;
+}
 
+.boxImage {
+  width: 100%;
+  height: auto;
 }
 
 .box p {
@@ -207,30 +178,12 @@
     margin-bottom: 10px;
 }
 
-.footerBox{
-  min-width: 500px;
-  
-}
 
-.footerBox p {
-  display: flex;
-    justify-content: center;
-}
-
-.footerBox image{
-  display: flex;
-    justify-content: center;
-}
-.footerBox a{
-  display: flex;
-    justify-content: center;
-}
 .button{
   padding: 10px;
   border-radius: 15px;
   border-color: #eaeaea;
-  margin-top: 10px;
-  
+  margin-top: 10px;  
 }
 .buttonExtra{
   padding: 10px;

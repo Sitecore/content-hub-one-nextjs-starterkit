@@ -1,6 +1,4 @@
-import { useRouter } from "next/router";
 import Recipe, {RecipeResults} from "../../types/Recipe/recipe-type";
-import ErrorPage from "next/error";
 import {getRecipeById,getAllRecipeWithIds} from "../../lib/Recipe/recipe-lib";
 import stylesHp from '../../styles/Homepage/Homepage.module.css';
 import Head from 'next/head'
@@ -10,8 +8,10 @@ import Homepage from "../../types/Homepage/homepage-type";
 import HeaderComponent from "../../components/Homepage/header-component";
 import FooterComponent from "../../components/Homepage/footer-component";
 import { richTextProfile } from "../../lib/Common/richTextConfiguration";
-import { JSONContent } from "@tiptap/core";
 import { generateHTML } from "@tiptap/html";
+import Image from 'next/image'
+import HeroBanner from "../../components/Homepage/hero-banner";
+
 const Renderer = require("prosemirror-to-html-js").Renderer;
 
 
@@ -48,13 +48,9 @@ type Params = {
   };
 
 const Post = ({recipe,homepage}: Props) => {
-    const router = useRouter();
-    const renderer = new Renderer();
     
     const output = generateHTML(recipe?.preparationDescriptionRt,[richTextProfile]);
-    /*if (!router.isFallback && !recipe?.id) { //&& !recipe?.slug
-        return <ErrorPage statusCode={404} />;
-    }*/
+
     return (
         <div className={stylesHp.container}>
             <Head>
@@ -66,10 +62,11 @@ const Post = ({recipe,homepage}: Props) => {
                 <HeaderComponent 
                     allHeaders={homepage.header}
                 />
-                <div className={stylesHp.HeroImage}>
-                    <img  src={recipe?.ImageList?.results[0].fileUrl}/>
-                </div>
-
+                <HeroBanner 
+                  heroImageUrl={recipe?.ImageList?.results[0].fileUrl}
+                  altText=''
+                />
+                
                 <div className={stylesHp.boxedContainer} >
                     <h1>{recipe?.Title}</h1>
                     <p>
