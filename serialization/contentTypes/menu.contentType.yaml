@@ -1,0 +1,20 @@
+﻿id: menu
+name:
+  en-US: Menu
+description:
+  en-US: Menu Navigation of Website
+fields:
+- id: label
+  name:
+    en-US: Label
+  type: ShortText
+  required: false
+  helpText:
+    en-US: ''
+- id: link
+  name:
+    en-US: Link
+  type: ShortText
+  required: false
+  helpText:
+    en-US: ''

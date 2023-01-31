@@ -1,0 +1,9 @@
+.HeroImage {
+    margin-top: 0px;
+}
+
+.HeroImage img {
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+}

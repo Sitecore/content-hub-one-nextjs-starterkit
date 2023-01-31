@@ -1,0 +1,9 @@
+﻿id: G7Jr0W6Z0UiB7MnXv-r9bg
+name: Sitecore
+fields:
+  label:
+    value: Sitecore
+    type: ShortText
+  link:
+    value: https://www.sitecore.com
+    type: ShortText

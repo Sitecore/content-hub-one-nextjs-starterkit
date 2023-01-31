@@ -1,0 +1,21 @@
+﻿id: header
+name:
+  en-US: Header
+description:
+  en-US: >
+    Header of Website
+fields:
+- id: logo
+  name:
+    en-US: Logo
+  type: Media
+  required: false
+  helpText:
+    en-US: ''
+- id: menuItems
+  name:
+    en-US: Menu items
+  type: Reference
+  required: false
+  helpText:
+    en-US: ''

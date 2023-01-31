@@ -1,0 +1,30 @@
+﻿id: RaUpzYq9-U6mkdOUD8hMqg
+name: Homepage Header
+fields:
+  menuItems:
+    value:
+    - >-
+      {
+        "type": "Link",
+        "relatedType": "Content",
+        "id": "OSQicScOMEKNxsx3sqew0w",
+        "uri": "http://content-api-weu.sitecorecloud.io/api/content/v1/items/OSQicScOMEKNxsx3sqew0w"
+      }
+    - >-
+      {
+        "type": "Link",
+        "relatedType": "Content",
+        "id": "uP-cIOB-LUOfJcFmHLi17w",
+        "uri": "http://content-api-weu.sitecorecloud.io/api/content/v1/items/uP-cIOB-LUOfJcFmHLi17w"
+      }
+    type: Reference
+  logo:
+    value:
+    - >-
+      {
+        "type": "Link",
+        "relatedType": "Media",
+        "id": "WdokfNA8xkeL6SV8sTfv8A",
+        "uri": "http://content-api-weu.sitecorecloud.io/api/content/v1/media/WdokfNA8xkeL6SV8sTfv8A"
+      }
+    type: Media

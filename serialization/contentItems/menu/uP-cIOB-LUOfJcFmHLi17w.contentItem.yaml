@@ -1,0 +1,9 @@
+﻿id: uP-cIOB-LUOfJcFmHLi17w
+name: Content Hub ONE
+fields:
+  label:
+    value: Content Hub ONE
+    type: ShortText
+  link:
+    value: https://docs.sitecore.com
+    type: ShortText

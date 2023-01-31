@@ -1,0 +1,66 @@
+﻿id: 1VcOwIfbqk6toyJiKuOWWg
+name: Homepage
+fields:
+  recipeTitle:
+    value: Delicious Recipes from Content Hub ONE
+    type: ShortText
+  recipeSectionText:
+    value: Checkout our delicious recipes and see how easy you can manage all kinds of content using Content Hub One. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+    type: LongText
+  video:
+    value: 
+    type: ShortText
+  header:
+    value:
+    - >-
+      {
+        "type": "Link",
+        "relatedType": "Content",
+        "id": "RaUpzYq9-U6mkdOUD8hMqg",
+        "uri": "http://content-api-weu.sitecorecloud.io/api/content/v1/items/RaUpzYq9-U6mkdOUD8hMqg"
+      }
+    type: Reference
+  recipes:
+    value:
+    - >-
+      {
+        "type": "Link",
+        "relatedType": "Content",
+        "id": "T1t4v4fg4EqBDv3dzol2wA",
+        "uri": "http://content-api-weu.sitecorecloud.io/api/content/v1/items/T1t4v4fg4EqBDv3dzol2wA"
+      }
+    - >-
+      {
+        "type": "Link",
+        "relatedType": "Content",
+        "id": "-2OFtOw5zEekwWNhAocubQ",
+        "uri": "http://content-api-weu.sitecorecloud.io/api/content/v1/items/-2OFtOw5zEekwWNhAocubQ"
+      }
+    - >-
+      {
+        "type": "Link",
+        "relatedType": "Content",
+        "id": "W0XD7ovswU2ctmOx-Zw45Q",
+        "uri": "http://content-api-weu.sitecorecloud.io/api/content/v1/items/W0XD7ovswU2ctmOx-Zw45Q"
+      }
+    type: Reference
+  footer:
+    value:
+    - >-
+      {
+        "type": "Link",
+        "relatedType": "Content",
+        "id": "ERTQNM3AxUWpbhIBhcBe8g",
+        "uri": "http://content-api-weu.sitecorecloud.io/api/content/v1/items/ERTQNM3AxUWpbhIBhcBe8g"
+      }
+    type: Reference
+  heroBanner:
+    value:
+    - >-
+      {
+        "type": "Link",
+        "relatedType": "Media",
+        "id": "YPNKM-DYFkCoy8P4F4OY-Q",
+        "uri": "http://content-api-weu.sitecorecloud.io/api/content/v1/media/YPNKM-DYFkCoy8P4F4OY-Q"
+      }
+    type: Media

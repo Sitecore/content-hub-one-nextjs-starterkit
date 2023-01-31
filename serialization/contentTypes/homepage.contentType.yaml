@@ -1,0 +1,54 @@
+﻿id: homepage
+name:
+  en-US: Homepage
+description:
+  en-US: Homepage of the website
+fields:
+- id: header
+  name:
+    en-US: Header
+  type: Reference
+  required: false
+  helpText:
+    en-US: ''
+- id: heroBanner
+  name:
+    en-US: Hero Banner
+  type: Media
+  required: false
+  helpText:
+    en-US: ''
+- id: recipeTitle
+  name:
+    en-US: Recipe Title
+  type: ShortText
+  required: false
+  helpText:
+    en-US: ''
+- id: recipeSectionText
+  name:
+    en-US: Recipe Section Text
+  type: LongText
+  required: false
+  helpText:
+    en-US: ''
+- id: recipes
+  name:
+    en-US: Recipes
+  type: Reference
+  required: false
+  helpText:
+    en-US: ''
+- id: footer
+  name:
+    en-US: Footer
+  type: Reference
+  required: false
+  helpText:
+    en-US: ''
+- id: video
+  name:
+    en-US: Video Test
+  type: ShortText
+  required: false
+  helpText: {}
