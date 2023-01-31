@@ -19,10 +19,6 @@ In the root of your repository folder run:
 
     npm install
 
-As you might see 1 high severity vulnerability you might want to run following command to fix it.
-
-    npm audit fix
-
 ## setup .env 
 Copy .env.example file in your repository root and rename it to ".env".
 In there fill the following values:
