@@ -7,3 +7,6 @@ fields:
   link:
     value: /
     type: ShortText
+  menuImage:
+    value: []
+    type: Media

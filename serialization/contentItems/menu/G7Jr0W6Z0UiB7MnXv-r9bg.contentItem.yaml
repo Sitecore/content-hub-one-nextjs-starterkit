@@ -7,3 +7,13 @@ fields:
   link:
     value: https://www.sitecore.com
     type: ShortText
+  menuImage:
+    value:
+    - >-
+      {
+        "id": "e-oVETnuUEij414Iq6gcfg",
+        "type": "Link",
+        "relatedType": "Media",
+        "uri": "http://content-api-weu.sitecorecloud.io/api/content/v1/media/e-oVETnuUEij414Iq6gcfg"
+      }
+    type: Media

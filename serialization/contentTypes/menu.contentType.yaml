@@ -18,3 +18,10 @@ fields:
   required: false
   helpText:
     en-US: ''
+- id: menuImage
+  name:
+    en-US: Menu Image
+  type: Media
+  required: false
+  helpText:
+    en-US: ''
