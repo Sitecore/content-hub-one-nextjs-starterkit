@@ -6,13 +6,21 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 More Information about Content Hub ONE including Video Tutorials you find in the [Developer Portal]( https://developers.sitecore.com/content-management/content-hub-one).
 
 ## Prerequisites
-For this starterkit you require a Content Hub ONE tenant. Find more information here: [https://www.sitecore.com/products/content-hub-one](https://www.sitecore.com/products/content-hub-one)
+For this starterkit you require 
+- a Content Hub ONE tenant. Find more information here: [https://www.sitecore.com/products/content-hub-one](https://www.sitecore.com/products/content-hub-one)
+- node.js incl. npm you can download it [here](https://nodejs.org)
+- for installing the Github CLI and the CH-ONE CLI chocolatey can be helpful. You can download it from [here](https://chocolatey.org/install) 
+- [Github CLI](https://cli.github.com/manual/installation)
+
 
 ### Install the Content Hub ONE CLI. 
 Check the [documentation](https://doc.sitecore.com/ch-one/en/developers/content-hub-one/content-hub-one-cli--install-and-run-the-cli.html).
 
+
 ## Clone this repository
-Clone this repository to your local drive. 
+Clone this repository to your local drive. Ideally fork it to the github account you use or just download it using e.g. the Github CLI: 
+
+    gh repo clone Sitecore/content-hub-one-nextjs-starterkit
 
 ## Install required npm packages
 In the root of your repository folder run: 
@@ -48,14 +56,25 @@ In the root of your repository you find the setup.js file.
 In your console window, navigate to the root of the solution and run:
 
     node setup.js
+    
+Note: If you are not working with the production environment you need to change the urls in the setup.js script to match your environment.
 
-### Push the serialized content types into your Contnet Hub ONE tenant. 
-Navigate with your console to the serialization folder within your solution. Run:
+### Push the serialized content types into your Contnet Hub ONE tenant.
+
+Connect the cli with the your Content Hub ONE tenant. Therefore use:
+    
+    ch-one-cli tenant add --organization-id <Organization ID> --tenant-id <Tenant ID> --client-id <Device: OAuth client ID> 
+
+Note: If you are not working with the production environment you need to change base-path, authority and audience. Check command parameters with:
+    ch-one-cli tenant add -h
+
+Navigate with your console to the *serialization* folder within your solution. 
+Run:
 
     ch-one-cli ser push content-type
 
 ### Push the serialized content items into your Content Hub ONE tenant. 
-Navigate with your console to the serialization folder within your solution. Run: 
+Navigate with your console to the *serialization* folder within your solution. Run: 
 
     ch-one-cli ser push content-item -c "menu"
 
@@ -69,13 +88,13 @@ Navigate with your console to the serialization folder within your solution. Run
 
 ### Publish Content Types, Media Items And Content Items
 Go to the Content Hub ONE app and publish in the following order:
-1. Content Types
-2. Media Items
-3. Content Items
+1. Media Items
+2. Content Items
 
-If you are approaching the Delivery API items need to be published to be available. Using the preview API, publishing is not required.
+Note: If you are connecting to the Delivery API, items need to be published to be available. Using the Preview API, publishing is not required.
 
 ## Start the application
+Navigate to the root folder of your app.
 
 run the development server:
 
