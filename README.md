@@ -94,7 +94,7 @@ In your console, navigate to the *serialization* folder within your solution. Ru
 
     ch-one-cli ser push content-item -c "homepage"
 
-### Publish content types, media items, and content items
+### Publish media items, and content items
 
 In the Content Hub ONE app, publish in the following order:
 
