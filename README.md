@@ -60,17 +60,17 @@ In the root of your repository, you will find the setup.js file.
 In your console window, navigate to the root of the solution and run the following command:
 
     node setup.js
-Note: If you are not working with the production environment you need to change the urls in the setup.js script to match your environment.
+Note: If you are not working with the production environment, you need to change the urls in the setup.js script to match your environment.
 
 
-### Push the serialized content types to your Content Hub ONE tenant. 
+### Push the serialized content types to your Content Hub ONE tenant 
 
 Connect the cli with the your Content Hub ONE tenant. Therefore use:
     
     ch-one-cli tenant add --organization-id <Organization ID> --tenant-id <Tenant ID> --client-id <Device: OAuth client ID> 
 
 
-Note: If you are not working with the production environment you need to change base-path, authority and audience. Check command parameters with:
+Note: If you are not working with the production environment, you need to change base-path, authority and audience. Check command parameters with:
     
     ch-one-cli tenant add -h
     
