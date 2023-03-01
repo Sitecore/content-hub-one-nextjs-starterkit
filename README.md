@@ -105,7 +105,7 @@ Note: If you are connecting to the Delivery API, items need to be published to b
 
 ## Start the application
 
-run the development server:
+navigate back to the root folder of your application/repo and run the development server:
 
 ```bash
 npm run dev
