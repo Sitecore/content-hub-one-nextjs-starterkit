@@ -1,6 +1,4 @@
 export async function fetchAPI(query: string) {
-  console.log('DEBUG:');
-  console.log(process.env.SITECORE_ENDPOINT_URL as string);
   return fetch(process.env.SITECORE_ENDPOINT_URL as string, {
     method: "POST",
     headers: {

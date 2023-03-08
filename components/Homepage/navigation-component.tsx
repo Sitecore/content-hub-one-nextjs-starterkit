@@ -10,8 +10,8 @@ type Props = {
 const NavigationComponent = ({menuResults}: Props) => {
     return(
         <div className={stylesHp.Navigation}>
-          {menuResults.results.map((menu: Menu) => (
-            <Link href={menu.link}>
+          {menuResults?.results?.map((menu: Menu) => (
+            <Link key={menu.id} href={menu.link}>
               <span className='NavigationItem'>
                 {menu.label}
               </span>

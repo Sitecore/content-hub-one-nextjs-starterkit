@@ -46,9 +46,3 @@ fields:
   required: false
   helpText:
     en-US: ''
-- id: video
-  name:
-    en-US: Video Test
-  type: ShortText
-  required: false
-  helpText: {}

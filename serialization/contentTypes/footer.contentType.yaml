@@ -11,3 +11,10 @@ fields:
   required: false
   helpText:
     en-US: ''
+- id: footerText
+  name:
+    en-US: Footer Text
+  type: ShortText
+  required: false
+  helpText:
+    en-US: ''

@@ -4,7 +4,10 @@ import {ALL_HOMEPAGE_QUERY,HOMEPAGE_QUERY} from "../../graphQl/Homepage/homepage
 
 
 export async function getAllHomepage(preview: boolean): Promise<Homepage[]> {
+
+    //console.log(ALL_HOMEPAGE_QUERY);
     const data = await fetchAPI(`${ALL_HOMEPAGE_QUERY}`);
+    //console.log(data);
     return extractPosts(data.data);
 }
 
@@ -16,6 +19,7 @@ export async function getHomepageById(id: string): Promise<Homepage> {
         ${HOMEPAGE_QUERY}
     }
   }`;
+
   const data = await fetchAPI(queryHomepage);
   return data.data.data;
   

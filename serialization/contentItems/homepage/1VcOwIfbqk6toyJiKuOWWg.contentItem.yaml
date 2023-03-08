@@ -7,9 +7,6 @@ fields:
   recipeSectionText:
     value: Checkout our delicious recipes and see how easy you can manage all kinds of content using Content Hub One. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
     type: LongText
-  video:
-    value: 
-    type: ShortText
   header:
     value:
     - >-
@@ -26,6 +23,13 @@ fields:
       {
         "type": "Link",
         "relatedType": "Content",
+        "id": "W0XD7ovswU2ctmOx-Zw45Q",
+        "uri": "http://content-api-weu.sitecorecloud.io/api/content/v1/items/W0XD7ovswU2ctmOx-Zw45Q"
+      }
+    - >-
+      {
+        "type": "Link",
+        "relatedType": "Content",
         "id": "T1t4v4fg4EqBDv3dzol2wA",
         "uri": "http://content-api-weu.sitecorecloud.io/api/content/v1/items/T1t4v4fg4EqBDv3dzol2wA"
       }
@@ -35,13 +39,6 @@ fields:
         "relatedType": "Content",
         "id": "-2OFtOw5zEekwWNhAocubQ",
         "uri": "http://content-api-weu.sitecorecloud.io/api/content/v1/items/-2OFtOw5zEekwWNhAocubQ"
-      }
-    - >-
-      {
-        "type": "Link",
-        "relatedType": "Content",
-        "id": "W0XD7ovswU2ctmOx-Zw45Q",
-        "uri": "http://content-api-weu.sitecorecloud.io/api/content/v1/items/W0XD7ovswU2ctmOx-Zw45Q"
       }
     type: Reference
   footer:

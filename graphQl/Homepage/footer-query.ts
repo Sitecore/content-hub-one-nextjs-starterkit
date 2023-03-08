@@ -3,6 +3,7 @@ import MENU_QUERY from "./menu-query";
 export const FOOTER_QUERY = `
   id
   name
+  footerText
   menuItems {
     total
     results {

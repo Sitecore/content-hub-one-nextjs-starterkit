@@ -1,17 +1,19 @@
 import Head from 'next/head'
 import HeaderComponent from '../components/Homepage/header-component'
 import stylesHp from '../styles/Homepage/Homepage.module.css';
-import {getAllHomepage} from "../lib/Homepage/homepage-lib";
+import {getAllHomepage, getHomepageById} from "../lib/Homepage/homepage-lib";
 import Homepage from "../types/Homepage/homepage-type";
 import FooterComponent from '../components/Homepage/footer-component';
 import RecipeTeaserComponent from '../components/Recipe/recipeTeaser-component';
 import Image from 'next/image'
 import HeroBanner from '../components/Homepage/hero-banner';
+import { HOMEPAGE_ID } from '../lib/Common/constants';
 
 export async function getStaticProps({ preview = false}){
   const allHomepage = await getAllHomepage(preview);
+  const homepage = await getHomepageById(HOMEPAGE_ID);
   return{
-      props: {allHomepage,  preview},
+      props: {allHomepage,homepage, preview},
       // Next.js will attempt to re-generate the page:
       // - When a request comes in
       // - At most once every 10 seconds
@@ -22,10 +24,11 @@ export async function getStaticProps({ preview = false}){
 
 type Props = {
   allHomepage: Homepage[];
+  homepage: Homepage;
 }
 
-const Homepage = ({allHomepage}: Props) => {
-  const homepage = allHomepage[0];
+const Homepage = ({allHomepage,homepage}: Props) => {
+ //const homepage = allHomepage[0];
 
   return (
     <div className={stylesHp.container}>
@@ -40,7 +43,7 @@ const Homepage = ({allHomepage}: Props) => {
           allHeaders={homepage.header}
         />
         <HeroBanner 
-          heroImageUrl={homepage.heroBanner?.results[0].fileUrl}
+          heroImageUrl={homepage.heroBanner?.results[0]?.fileUrl}
           altText=''
         />
        

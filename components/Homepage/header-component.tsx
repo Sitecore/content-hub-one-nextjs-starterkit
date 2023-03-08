@@ -18,14 +18,14 @@ const HeaderComponent = ({allHeaders}: Props) => {
                     <Link href="https://doc.sitecore.com/ch-one/" target="_blank">
                         <Image 
                             alt=''
-                            src={header.logo.results[0].fileUrl}
+                            src={header?.logo?.results[0]?.fileUrl}
                             width={24}
                             height={24}
                             className={stylesHp.Logo}
                         />
                     </Link>
                     <NavigationComponent 
-                        menuResults  = {header.menuItems}
+                        menuResults  = {header?.menuItems}
                     />
                 </div>
                 
