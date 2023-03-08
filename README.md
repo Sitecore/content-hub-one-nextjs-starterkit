@@ -23,57 +23,45 @@ In the root of your repository folder run:
 Copy .env.example file in your repository root and rename it to ".env".
 In there fill the following values:
 
-SITECORE_CLIENT_ID --> You find the Client Id in the Content Hub ONE app under 'Settings'>'OAuthClient'>'Client Credentials'
+**SITECORE_CLIENT_ID** --> You find the Client Id in the Content Hub ONE app under 'Settings'>'OAuthClient'>'Client Credentials'
 
-SITECORE_CLIENT_SECRET. --> You find the Client Secret in the Content Hub ONE app under 'Settings'>'OAuthClient'>'Client Credentials'
+**SITECORE_CLIENT_SECRET** --> You find the Client Secret in the Content Hub ONE app under 'Settings'>'OAuthClient'>'Client Credentials'
 
 This is required later on for uploading the images of the demo solution using the setup.js.
 
 
-SITECORE_ENDPOINT_URL  --> Here you need the Delivery API Url e.g.: https://edge.sitecorecloud.io/api/graphql/v1. More Information you find in the [Delivery API Documentation](https://doc.sitecore.com/ch-one/en/developers/content-hub-one/graphql--preview-and-delivery-apis.html). 
+**SITECORE_ENDPOINT_URL**  --> Here you need the Delivery API Url e.g.: https://edge.sitecorecloud.io/api/graphql/v1. More Information you find in the [Delivery API Documentation](https://doc.sitecore.com/ch-one/en/developers/content-hub-one/graphql--preview-and-delivery-apis.html). 
 
-SITECORE_DEV_AUTH_TOKEN --> In Content Hub ONE you need to create an API Key. This can be done via the [Content Hub ONE App](https://doc.sitecore.com/ch-one/en/users/content-hub-one/content-delivery--manage-api-keys.html), CLI or [Content Management API ](https://doc.sitecore.com/ch-one/en/developers/content-hub-one/graphql--api-keys.html)  
+**SITECORE_DEV_AUTH_TOKEN** --> In Content Hub ONE you need to create an API Key. This can be done via the [Content Hub ONE App](https://doc.sitecore.com/ch-one/en/users/content-hub-one/content-delivery--manage-api-keys.html), CLI or [Content Management API ](https://doc.sitecore.com/ch-one/en/developers/content-hub-one/graphql--api-keys.html)  
 
 This is required to connect your App with the Content Hub ONE tenant.
 
-## Serialization
+## Push content to your tenant
+The starter kit uses images, content types and content items. To install those to your Content Hub ONE tenant use your command prompt.
 
-### Media items and Files
-The Starterkit uses Images. Currently the CLI cannot handle Media Assets and Media Items. These need to be created manually.
+### Setup
 
-This solution contains a node script to support you uploading the images from the /setup folder and creating the required media items.
+Navigate to the root of the app (content-hub-one-nextjs-starterkit).
 
-In the root of your repository you find the setup.js file. 
+run in the root of your app directory:
 
-In your console window, navigate to the root of the solution and run:
+    node setup
 
-    node setup.js
+The Script will push the images to your environment, next the content types and last the content items.
 
-### Push the serialized content types into your Contnet Hub ONE tenant. 
-Navigate with your console to the serialization folder within your solution. Run:
+The script is re-runnable.
 
-    ch-one-cli ser push content-type
+### Publish 
 
-### Push the serialized content items into your Content Hub ONE tenant. 
-Navigate with your console to the serialization folder within your solution. Run: 
+To make the newly created images and content items available on the content delivery API (GraphQl endpoint on Edge) you need to publish.
 
-    ch-one-cli ser push content-item -c "menu"
+run:
 
-    ch-one-cli ser push content-item -c "header"
+    node publish
 
-    ch-one-cli ser push content-item -c "footer"
+The Script will publish all the required items. Please note that publishing is just being scheduled and can take up to a few minutes after finish of the script.
 
-    ch-one-cli ser push content-item -c "recipe"
-
-    ch-one-cli ser push content-item -c "homepage"
-
-### Publish Content Types, Media Items And Content Items
-Go to the Content Hub ONE app and publish in the following order:
-1. Content Types
-2. Media Items
-3. Content Items
-
-If you are approaching the Delivery API items need to be published to be available. Using the preview API, publishing is not required.
+The script is re-runnable.
 
 ## Start the application
 
@@ -92,3 +80,28 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+## Removal of starter kit related content
+In case you want to remove all content items, content types or images installed by starter kit use the command prompt and navigate to the root of your app directory.
+
+### Unpublish
+First content items and images need to be unpublished.
+
+run in your app root directory:
+
+    node unpublish
+
+The Script will unpublish all the required items. Please note that unpublishing is just being scheduled and can take up to a few minutes after finish of the script.
+
+The script is re-runnable.
+
+### Remove content
+Make sure that the content has been unpublished. You can check that in the Content Hub ONE editing UI.
+
+run in your app root directory:
+
+    node remove
+    
+The script is re-runnable.
+

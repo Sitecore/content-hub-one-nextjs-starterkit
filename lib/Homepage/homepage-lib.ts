@@ -19,8 +19,7 @@ export async function getHomepageById(id: string): Promise<Homepage> {
         ${HOMEPAGE_QUERY}
     }
   }`;
-  console.log('QUERY HOMEPAGE by ID');
-  console.log(queryHomepage);
+
   const data = await fetchAPI(queryHomepage);
   return data.data.data;
   

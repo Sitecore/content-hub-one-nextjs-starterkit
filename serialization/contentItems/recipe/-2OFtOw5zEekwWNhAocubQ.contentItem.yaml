@@ -2,7 +2,7 @@
 name: Pizza
 fields:
   recipeTitle:
-    value: Pizza
+    value: Delicious Pizza
     type: ShortText
   minutesToPrepare:
     value: 15

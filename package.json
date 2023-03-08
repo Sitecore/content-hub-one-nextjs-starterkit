@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@next/font": "13.0.7",
+    "@sitecore/contenthub-one-api": "^1.1.0",
+    "@sitecore/contenthub-one-sdk": "^1.1.2",
     "@tiptap/extension-blockquote": "^2.0.0-beta.202",
     "@tiptap/extension-bold": "^2.0.0-beta.202",
     "@tiptap/extension-bullet-list": "^2.0.0-beta.202",
@@ -46,6 +48,6 @@
     "qs": "^6.11.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "typescript": "4.9.4"
+    "typescript": "^4.9.5"
   }
 }
