@@ -12,7 +12,7 @@ const RecipeTeaserComponent = ({allRecipes}:Props) => {
     return(
         <div>
             {recipes.map((recipe: any) => (
-                <div className={stylesHp.boxOuter}>
+                <div key={recipe.id} className={stylesHp.boxOuter}>
                     <div className={stylesHp.box}>
                         <Image 
                             alt=''
