@@ -38,8 +38,6 @@ async function startSetup(){
     }
     console.log(color.SUCCESS,'Completed - Publish Media Items');
 
-
-    console.log(color.SUCCESS,'Completed - Push Content Items');
     // Publish Content Items
     console.log('');
     console.log(color.INFO,'Step 2: Publish Content Items');

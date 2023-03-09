@@ -36,27 +36,20 @@ async function removeSetup () {
     for(var i in constants.contentItems) {
 
         var contentId = constants.contentItems[i];
-        //TODO: check if item exists
-        exists = await items.itemExists(client,contentId);
-        if (exists) {
-            // check if item is unpublished already
-            var deleted = false;
-            var counter = 0;
-            while (!deleted && counter < 10) {        
-                var item = await items.getItem(client,contentId);
-                if (item != null) {
+        // check if item exists
+        var item = await items.getItem(client,contentId);
 
-                    var published = publish.isPublished(item);
-                    if (!published) {
-                        await items.deleteItem(client, contentId); 
-                        deleted = true;
-                    }
-                }
-                counter++;
+        if (item != null) {
+            // check if item is unpublished already
+
+            var published = publish.isPublished(item);
+            if (!published) {
+                await items.deleteItem(client, contentId); 
+                
+            } else {
+                console.log(color.WARNING, 'Item with ID ' + contentId + 'is published and cannot be deleted');
             }
-            if (!deleted) {
-                console.log(color.WARNING, 'Content Item ' + contentId + ' could not be deleted after ' + counter + ' iterations.')
-            }
+            
         } else {
             console.log(color.WARNING, 'Item with ID ' + contentId + ' does not exist');
         }   
@@ -71,30 +64,19 @@ async function removeSetup () {
         var mediaId = constants.mediaItems[i];
         
         // Check if item exists        
-        exists = await media.mediaItemExists(client,mediaId);
         
-        if (exists) {
+        var mediaItem = await media.getMediaItem(client,mediaId);
+        if (mediaItem != null) {
             // check if item is unpublished already
-            var deleted = false;
-            var counter = 0;
-            while (!deleted && counter < 10) {        
-                var mediaItem = await media.getMediaItem(client,mediaId);
 
-                if (mediaItem != null) {
+            var published = publish.isPublished(mediaItem);
 
-                    var published = publish.isPublished(mediaItem);
-
-                    if (!published) {
-
-                        await media.deleteMediaItem(client, mediaId);
-                        deleted = true;
-                    }
-                }
-                counter++;
+            if (!published) {
+                await media.deleteMediaItem(client, mediaId);
+            } else {
+                console.log(color.WARNING, 'Media Item with ID ' + contentId + ' is published and cannot be deleted');
             }
-            if (!deleted) {
-                console.log(color.WARNING, 'Media Item ' + mediaId + ' could not be deleted after ' + counter + ' iterations. It seems the item is still not fully unpublished. Please check and rerun the script when Item is unpublished.')
-            }
+            
         } else {
             console.log(color.WARNING, 'Media Item with ID ' + mediaId + ' does not exist');
         }   

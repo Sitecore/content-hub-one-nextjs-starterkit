@@ -126,6 +126,7 @@ async function startSetup(){
     for (var i in constants.contentTypes) {
         var typeId = constants.contentTypes[i];
         status = await serialize.pushContentItems(typeId);
+        await cmd.sleep(3000); //Wait to prevent serialization not being finished of referenced items.
     }
 
     console.log(color.SUCCESS,'Completed - Push Content Items');

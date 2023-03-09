@@ -16,7 +16,7 @@ const FooterComponent = ({allFooters}: Props) => {
                 Further Information: {' '}
                 </p>
                 <FooterLinksComponent 
-                    menuResults  = {footer.menuItems}
+                    menuResults  = {footer?.menuItems}
                 />
                 
             </div>
