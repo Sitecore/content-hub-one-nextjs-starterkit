@@ -15,8 +15,24 @@ To use this starter kit you require
 
 
 ### Install the Content Hub ONE CLI. 
+You can install the Content Hub ONE CLI using chocolatey:
 
-To install the Content Hub ONE CLI, see the [CLI documentation](https://doc.sitecore.com/ch-one/en/developers/content-hub-one/content-hub-one-cli--install-and-run-the-cli.html).
+    choco install Sitecore.ContentHubOne.Cli --source https://nuget.sitecore.com/resources/v2/
+
+For more information see [CLI documentation](https://doc.sitecore.com/ch-one/en/developers/content-hub-one/content-hub-one-cli--install-and-run-the-cli.html).
+
+### Connect Content Hub ONE Tenant with your CLI
+You can login to several Content Hub ONE instances but one needs to be set active.
+
+To login and add your tenant run:
+
+    ch-one-cli tenant add \
+    --organization-id <Organization ID> \
+    --tenant-id <Tenant ID> \
+    --client-id <Client credentials: OAuth client ID> \
+    --client-secret <Client credentials: OAuth client secret>
+
+For more information check: [Log in with the Content Hub ONE CLI](https://github.com/Sitecore/content-hub-one-nextjs-starterkit)
 
 ## Clone this repository
 
