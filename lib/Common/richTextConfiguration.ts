@@ -19,6 +19,11 @@ import { Strike, StrikeOptions } from "@tiptap/extension-strike";
 import { Link, LinkOptions } from "@tiptap/extension-link";
 import { Text } from "@tiptap/extension-text";
 import { Underline, UnderlineOptions } from "@tiptap/extension-underline";
+import { Table, TableOptions } from "@tiptap/extension-table";
+import {TableCell, TableCellOptions} from "@tiptap/extension-table-cell";
+import {TableRow, TableRowOptions} from "@tiptap/extension-table-row";
+import {TableHeader, TableHeaderOptions} from "@tiptap/extension-table-header";
+
 
 export interface richTextOptions {
   blockquote: Partial<BlockquoteOptions> | false;
@@ -41,6 +46,10 @@ export interface richTextOptions {
   link: Partial<LinkOptions> | false;
   text: false;
   underline: Partial<UnderlineOptions> | false;
+  table: Partial<TableOptions> | false;
+  tablerow: Partial<TableRowOptions> |false;
+  tablecell: Partial<TableCellOptions> |false;
+  tableheader: Partial<TableHeaderOptions> |false;
 }
 
 export const richTextProfile = Extension.create<richTextOptions>({
@@ -126,6 +135,21 @@ export const richTextProfile = Extension.create<richTextOptions>({
     }
     if (this.options.underline !== false) {
       extensions.push(Underline.configure(this.options?.underline));
+    }
+    if (this.options.table !== false) {
+      extensions.push(Table.configure(this.options?.table));
+    }
+    if (this.options.tablecell !== false) {
+      extensions.push(TableCell.configure(this.options?.tablecell));
+    }
+    if (this.options.tablerow !== false) {
+      extensions.push(TableRow.configure(this.options?.tablerow));
+    }
+    if (this.options.tablecell !== false) {
+      extensions.push(TableCell.configure(this.options?.tablecell));
+    }
+    if (this.options.tableheader !== false) {
+      extensions.push(TableHeader.configure(this.options?.tableheader));
     }
 
     return extensions;
