@@ -37,7 +37,7 @@ fields:
       }
     type: RichText
   ingredients:
-    value: Flour, Water, Salt, Yeast, Tomatos, Salt, Pepper, Basil, Oregano
+    value: Flour, Water, Salt, Yeast, Tomatoes, Salt, Pepper, Basil, Oregano
     type: LongText
   image:
     value:

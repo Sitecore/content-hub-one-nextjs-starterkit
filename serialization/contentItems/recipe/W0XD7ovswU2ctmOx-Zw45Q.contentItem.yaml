@@ -2,7 +2,7 @@
 name: Soft Ice
 fields:
   recipeTitle:
-    value: Soft ice
+    value: Soft Ice Cream
     type: ShortText
   minutesToPrepare:
     value: 25
