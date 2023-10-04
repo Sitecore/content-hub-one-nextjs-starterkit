@@ -34,9 +34,9 @@ To login and add your tenant run:
 
 For more information check: [Log in with the Content Hub ONE CLI](https://github.com/Sitecore/content-hub-one-nextjs-starterkit)
 
-## Clone this repository
+## Fork this repository
 
-Clone this repository to your local drive. 
+Fork this repository to your personal or company account and clone it to your local drive. 
 
 ## Install required npm packages
 
