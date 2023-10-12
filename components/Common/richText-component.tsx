@@ -9,9 +9,9 @@ type Props = {
 const RichText = ({richText}:Props) => {
     const output = generateHTML(richText,[richTextProfile]);
     return(
-        <p dangerouslySetInnerHTML={{__html: output}}>
+        <div dangerouslySetInnerHTML={{__html: output}}>
             
-        </p>
+        </div>
     )
 }
 
